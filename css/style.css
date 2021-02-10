@@ -1,0 +1,33 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #6964a3;
+  background-image: url("/images/desktop/swoop-top-desktop-main.svg"), url("/images/desktop/swoop-bottom-desktop-main.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.splash-main__title:before {
+  display: block;
+  content: ' ';
+  background-image: url("/images/desktop/moon.svg");
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
+}
+/*# sourceMappingURL=style.css.map */
