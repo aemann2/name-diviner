@@ -42,9 +42,7 @@ body {
 }
 
 .splash-main__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   padding: 20px;
   border: 0;
   font-size: 3rem;
@@ -86,6 +84,7 @@ body {
   margin-right: 2em;
   font-size: 12vh;
   background: -webkit-linear-gradient(90deg, #ffffff -3.07%, #b9ac60 107.31%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -97,6 +96,7 @@ body {
 
 .title-wrapper--gradient {
   background: -webkit-linear-gradient(270.03deg, #ffffff 3.67%, #c7b867 108.91%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
