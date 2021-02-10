@@ -1,5 +1,13 @@
+$light-text: white;
+$dark-text: black;
+
+$title-font: 'Montserrat', sans-serif;
+$main-font: 'Lato', sans-serif;
+
 html {
   box-sizing: border-box;
+  height: 100%;
+  font-size: 16px;
 }
 *,
 *:before,
@@ -12,15 +20,42 @@ html {
   padding: 0;
 }
 
+h1 {
+  font-family: $title-font;
+}
+
 body {
   background-color: #6964a3;
   background-image: url('/images/desktop/swoop-top-desktop-main.svg'),
     url('/images/desktop/swoop-bottom-desktop-main.svg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-position: top right, center bottom;
+  background-size: 50%, 100%;
+  overflow: hidden;
 }
 
-.splash-main__title:before {
+.splash-main {
+  color: $light-text;
+
+  &__para {
+    font-family: $main-font;
+  }
+
+  &__title:before {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    content: ' ';
+    background-image: url('/images/desktop/stars-desktop-center.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.splash-main:before {
   display: block;
   content: ' ';
   background-image: url('/images/desktop/moon.svg');

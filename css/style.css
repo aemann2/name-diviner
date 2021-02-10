@@ -1,6 +1,8 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 100%;
+  font-size: 16px;
 }
 
 *,
@@ -15,14 +17,41 @@ html {
   padding: 0;
 }
 
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   background-color: #6964a3;
   background-image: url("/images/desktop/swoop-top-desktop-main.svg"), url("/images/desktop/swoop-bottom-desktop-main.svg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-position: top right, center bottom;
+  background-size: 50%, 100%;
+  overflow: hidden;
+}
+
+.splash-main {
+  color: white;
+}
+
+.splash-main__para {
+  font-family: "Lato", sans-serif;
 }
 
 .splash-main__title:before {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  content: ' ';
+  background-image: url("/images/desktop/stars-desktop-center.svg");
+  background-size: 90%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.splash-main:before {
   display: block;
   content: ' ';
   background-image: url("/images/desktop/moon.svg");
