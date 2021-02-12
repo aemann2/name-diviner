@@ -2,6 +2,7 @@
 
 $light-text: white;
 $dark-text: black;
+$highlight-text: yellow;
 
 $title-font: 'Montserrat', sans-serif;
 $main-font: 'Lato', sans-serif;
@@ -53,18 +54,25 @@ body {
   }
 
   &__button {
-    display: inline-block;
+    position: relative;
+    left: 20%;
+    top: 2rem;
     padding: 20px;
     border: 0;
     font-size: 3rem;
     background: #3f3d56;
     box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    transition: filter 0.3s;
     cursor: pointer;
   }
 
   &__button:hover {
-    filter: brightness(0.8);
+    filter: brightness(0.9);
+  }
+
+  &__button:hover > * {
+    color: $highlight-text;
   }
 
   &--white-link {
@@ -120,4 +128,68 @@ body {
   background-repeat: no-repeat;
   height: 15rem;
   width: 15rem;
+}
+
+@media only screen and (max-width: 1350px) {
+  html {
+    font-size: 13px;
+  }
+
+  .splash-main {
+    &__para,
+    &__button {
+      margin: 0;
+      position: static;
+    }
+
+    &__button {
+      margin-top: 1rem;
+    }
+  }
+
+  .title-wrapper {
+    &__title {
+      font-size: 7rem;
+    }
+  }
+
+  .splash-main:before {
+    background-size: 12vw;
+    height: 12vw;
+    width: 12vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: 12px;
+  }
+
+  .splash-main {
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+      border-radius: 50%;
+      margin: 5rem auto 0 auto;
+      padding: 4rem;
+      font-size: 2rem;
+    }
+  }
+
+  .title-wrapper {
+    height: 30vh;
+    align-items: flex-start;
+    background-size: contain;
+    background-position: top right;
+
+    &__title {
+      margin: 1.5em 3em 0 0;
+      font-size: 10vw;
+    }
+  }
+
+  .splash-main:before {
+    display: none;
+  }
 }
