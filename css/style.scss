@@ -42,7 +42,9 @@ body {
   background-size: 100%;
 }
 
-.splash-main {
+// Index page styles //
+
+.index-main {
   color: $light-text;
   text-align: center;
 
@@ -118,7 +120,7 @@ body {
   }
 }
 
-.splash-main:before {
+.index-main:before {
   content: ' ';
   position: absolute;
   left: 2rem;
@@ -135,7 +137,7 @@ body {
     font-size: 13px;
   }
 
-  .splash-main {
+  .index-main {
     &__para,
     &__button {
       margin: 0;
@@ -153,7 +155,7 @@ body {
     }
   }
 
-  .splash-main:before {
+  .index-main:before {
     background-size: 12vw;
     height: 12vw;
     width: 12vw;
@@ -165,7 +167,7 @@ body {
     font-size: 12px;
   }
 
-  .splash-main {
+  .index-main {
     display: flex;
     flex-direction: column;
 
@@ -189,7 +191,9 @@ body {
     }
   }
 
-  .splash-main:before {
+  .index-main:before {
     display: none;
   }
 }
+
+// Entry page styles //
