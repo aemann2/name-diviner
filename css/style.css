@@ -23,6 +23,42 @@ h1 {
 
 body {
   background-color: #6964a3;
+  font-family: "Lato", sans-serif;
+}
+
+.index-main__button, .entry-main__button {
+  padding: 20px;
+  border: 0;
+  color: #faf7eb;
+  font-size: 3rem;
+  background: #3f3d56;
+  -webkit-box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: -webkit-filter 0.3s;
+  transition: -webkit-filter 0.3s;
+  transition: filter 0.3s;
+  transition: filter 0.3s, -webkit-filter 0.3s;
+}
+
+::-webkit-input-placeholder {
+  color: #8a8888;
+}
+
+:-ms-input-placeholder {
+  color: #8a8888;
+}
+
+::-ms-input-placeholder {
+  color: #8a8888;
+}
+
+::placeholder {
+  color: #8a8888;
+}
+
+.index-body {
   background-image: url("/images/desktop/swoop-bottom-desktop-main.svg"), linear-gradient(35deg, rgba(105, 100, 163, 0) 50%, #a39753 100%);
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -30,12 +66,11 @@ body {
 }
 
 .index-main {
-  color: white;
+  color: #faf7eb;
   text-align: center;
 }
 
 .index-main__para {
-  font-family: "Lato", sans-serif;
   font-size: 3rem;
   margin-left: 6em;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -45,23 +80,12 @@ body {
   position: relative;
   left: 20%;
   top: 2rem;
-  padding: 20px;
-  border: 0;
-  font-size: 3rem;
-  background: #3f3d56;
-  -webkit-box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.25);
-          box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  -webkit-transition: -webkit-filter 0.3s;
-  transition: -webkit-filter 0.3s;
-  transition: filter 0.3s;
-  transition: filter 0.3s, -webkit-filter 0.3s;
-  cursor: pointer;
 }
 
 .index-main__button:hover {
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
+  color: yellow;
 }
 
 .index-main__button:hover > * {
@@ -70,7 +94,7 @@ body {
 
 .index-main--white-link {
   text-decoration: none;
-  color: white;
+  color: #faf7eb;
 }
 
 .title-wrapper {
@@ -177,6 +201,113 @@ body {
   }
   .index-main:before {
     display: none;
+  }
+}
+
+.entry-body {
+  background-image: url("/images/desktop/moon.svg"), url("/images/desktop/stars-secondary-top.svg"), url("/images/desktop/stars-secondary-bottom.svg"), url("/images/desktop/swoop-secondary-bottom.svg");
+  background-position: 1rem 1rem, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+}
+
+.entry-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.entry-main__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  height: 100px;
+  margin-top: 35vh;
+  color: #faf7eb;
+  font-size: 4rem;
+}
+
+.entry-main__name-input {
+  font-size: 3rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 8em;
+  border-radius: 10px;
+  border: 4px solid black;
+}
+
+.entry-main__button {
+  margin-top: 1rem;
+}
+
+.entry-main__button:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  color: yellow;
+}
+
+.entry-main__label:before {
+  content: ' ';
+  position: absolute;
+  bottom: 1em;
+  right: 5%;
+  margin: 0 auto;
+  background-image: url("/images/desktop/crystal-ball.svg");
+  background-repeat: no-repeat;
+  height: 22rem;
+  width: 22rem;
+}
+
+@media only screen and (max-width: 1350px) {
+  .entry-main__label:before {
+    bottom: 2em;
+    right: 3rem;
+  }
+  .entry-main__form {
+    margin-top: 10em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .entry-body {
+    background-image: url("/images/desktop/stars-secondary-top.svg"), url("/images/desktop/stars-secondary-bottom.svg");
+    background-position: top right, bottom left;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+  .entry-main__form {
+    font-size: 3rem;
+    margin-top: 8em;
+  }
+  .entry-main__name-input, .entry-main__button {
+    font-size: 2rem;
+  }
+  .entry-main__label:before {
+    left: 5rem;
+    background-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .entry-main__label:before {
+    left: 2em;
+    bottom: -1rem;
+    width: 70%;
   }
 }
 /*# sourceMappingURL=style.css.map */

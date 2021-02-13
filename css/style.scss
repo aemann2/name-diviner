@@ -1,11 +1,32 @@
-// Variables //
+// Variables and mixins //
 
-$light-text: white;
+$light-text: rgb(250, 247, 235);
 $dark-text: black;
+$placeholder-text: rgb(138, 136, 136);
 $highlight-text: yellow;
+
+$bg-color: #6964a3;
+$button-color: #3f3d56;
 
 $title-font: 'Montserrat', sans-serif;
 $main-font: 'Lato', sans-serif;
+
+@mixin button-hover {
+  &__button:hover {
+    filter: brightness(0.9);
+    color: $highlight-text;
+  }
+}
+
+@mixin bg-images {
+  .entry-body {
+    background-image: url('/images/desktop/stars-secondary-top.svg'),
+      url('/images/desktop/stars-secondary-bottom.svg');
+    background-position: top right, bottom left;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+}
 
 // Global styles //
 
@@ -30,7 +51,37 @@ h1 {
 }
 
 body {
-  background-color: #6964a3;
+  background-color: $bg-color;
+  font-family: $main-font;
+}
+
+%button-style {
+  padding: 20px;
+  border: 0;
+  color: $light-text;
+  font-size: 3rem;
+  background: $button-color;
+  box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+
+%bg-images {
+  background-image: url('/images/desktop/moon.svg'),
+    url('/images/desktop/stars-secondary-top.svg'),
+    url('/images/desktop/stars-secondary-bottom.svg');
+  background-position: 1rem 1rem, top right, bottom left;
+  background-repeat: no-repeat;
+}
+
+::placeholder {
+  color: $placeholder-text;
+}
+
+// Index page styles //
+
+.index-body {
   background-image: url('/images/desktop/swoop-bottom-desktop-main.svg'),
     linear-gradient(
       35deg,
@@ -42,36 +93,24 @@ body {
   background-size: 100%;
 }
 
-// Index page styles //
-
 .index-main {
   color: $light-text;
   text-align: center;
 
   &__para {
-    font-family: $main-font;
     font-size: 3rem;
     margin-left: 6em;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   &__button {
+    @extend %button-style;
     position: relative;
     left: 20%;
     top: 2rem;
-    padding: 20px;
-    border: 0;
-    font-size: 3rem;
-    background: #3f3d56;
-    box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    transition: filter 0.3s;
-    cursor: pointer;
   }
 
-  &__button:hover {
-    filter: brightness(0.9);
-  }
+  @include button-hover;
 
   &__button:hover > * {
     color: $highlight-text;
@@ -197,3 +236,103 @@ body {
 }
 
 // Entry page styles //
+
+.entry-body {
+  background-image: url('/images/desktop/moon.svg'),
+    url('/images/desktop/stars-secondary-top.svg'),
+    url('/images/desktop/stars-secondary-bottom.svg'),
+    url('/images/desktop/swoop-secondary-bottom.svg');
+  background-position: 1rem 1rem, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+}
+
+.entry-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    height: 100px;
+    margin-top: 35vh;
+    color: $light-text;
+    font-size: 4rem;
+  }
+
+  &__name-input {
+    font-size: 3rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 8em;
+    border-radius: 10px;
+    border: 4px solid black;
+  }
+
+  &__button {
+    @extend %button-style;
+    margin-top: 1rem;
+  }
+
+  @include button-hover;
+
+  &__label:before {
+    content: ' ';
+    position: absolute;
+    bottom: 1em;
+    right: 5%;
+    margin: 0 auto;
+    background-image: url('/images/desktop/crystal-ball.svg');
+    background-repeat: no-repeat;
+    height: 22rem;
+    width: 22rem;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .entry-main {
+    &__label:before {
+      bottom: 2em;
+      right: 3rem;
+    }
+
+    &__form {
+      margin-top: 10em;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  @include bg-images;
+
+  .entry-main {
+    &__form {
+      font-size: 3rem;
+      margin-top: 8em;
+    }
+
+    &__name-input,
+    &__button {
+      font-size: 2rem;
+    }
+
+    &__label:before {
+      left: 5rem;
+      background-size: 60%;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .entry-main {
+    &__label:before {
+      left: 2em;
+      bottom: -1rem;
+      width: 70%;
+    }
+  }
+}
