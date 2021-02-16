@@ -18,14 +18,12 @@ $main-font: 'Lato', sans-serif;
   }
 }
 
-@mixin bg-images {
-  .entry-body {
-    background-image: url('/images/desktop/stars-secondary-top.svg'),
-      url('/images/desktop/stars-secondary-bottom.svg');
-    background-position: top right, bottom left;
-    background-size: 80%;
-    background-repeat: no-repeat;
-  }
+@mixin bg-images-mobile {
+  background-image: url('/images/desktop/stars-secondary-top.svg'),
+    url('/images/desktop/stars-secondary-bottom.svg');
+  background-position: top right, bottom left;
+  background-size: 80%;
+  background-repeat: no-repeat;
 }
 
 // Global styles //
@@ -70,8 +68,9 @@ body {
 %bg-images {
   background-image: url('/images/desktop/moon.svg'),
     url('/images/desktop/stars-secondary-top.svg'),
-    url('/images/desktop/stars-secondary-bottom.svg');
-  background-position: 1rem 1rem, top right, bottom left;
+    url('/images/desktop/stars-secondary-bottom.svg'),
+    url('/images/desktop/swoop-secondary-bottom.svg');
+  background-position: 1rem 1rem, top right, bottom left, bottom right;
   background-repeat: no-repeat;
 }
 
@@ -79,260 +78,8 @@ body {
   color: $placeholder-text;
 }
 
-// Index page styles //
+@import 'index';
 
-.index-body {
-  background-image: url('/images/desktop/swoop-bottom-desktop-main.svg'),
-    linear-gradient(
-      35deg,
-      rgba(105, 100, 163, 0) 50%,
-      rgba(163, 151, 83, 1) 100%
-    );
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100%;
-}
+@import 'entry';
 
-.index-main {
-  color: $light-text;
-  text-align: center;
-
-  &__para {
-    font-size: 3rem;
-    margin-left: 6em;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  &__button {
-    @extend %button-style;
-    position: relative;
-    left: 20%;
-    top: 2rem;
-  }
-
-  @include button-hover;
-
-  &__button:hover > * {
-    color: $highlight-text;
-  }
-
-  &--white-link {
-    text-decoration: none;
-    color: $light-text;
-  }
-}
-
-.title-wrapper {
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('/images/desktop/stars-desktop-center.svg');
-  background-repeat: no-repeat;
-  height: 60vh;
-  background-size: 100% 100%;
-
-  &__title {
-    margin-right: 2em;
-    font-size: 12vh;
-    background: -webkit-linear-gradient(90deg, #ffffff -3.07%, #b9ac60 107.31%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &--break {
-    display: table;
-    margin-left: 1em;
-  }
-
-  // adding a slightly different gradient for the second line
-  &--gradient {
-    background: -webkit-linear-gradient(
-      270.03deg,
-      #ffffff 3.67%,
-      #c7b867 108.91%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-.index-main:before {
-  content: ' ';
-  position: absolute;
-  left: 2rem;
-  top: 2rem;
-  background-image: url('/images/desktop/moon.svg');
-  background-size: 15rem;
-  background-repeat: no-repeat;
-  height: 15rem;
-  width: 15rem;
-}
-
-@media only screen and (max-width: 1350px) {
-  html {
-    font-size: 13px;
-  }
-
-  .index-main {
-    &__para,
-    &__button {
-      margin: 0;
-      position: static;
-    }
-
-    &__button {
-      margin-top: 1rem;
-    }
-  }
-
-  .title-wrapper {
-    &__title {
-      font-size: 7rem;
-    }
-  }
-
-  .index-main:before {
-    background-size: 12vw;
-    height: 12vw;
-    width: 12vw;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  html {
-    font-size: 12px;
-  }
-
-  .index-main {
-    display: flex;
-    flex-direction: column;
-
-    &__button {
-      border-radius: 50%;
-      margin: 5rem auto 0 auto;
-      padding: 4rem;
-      font-size: 2rem;
-    }
-  }
-
-  .title-wrapper {
-    height: 30vh;
-    align-items: flex-start;
-    background-size: contain;
-    background-position: top right;
-
-    &__title {
-      margin: 1.5em 3em 0 0;
-      font-size: 10vw;
-    }
-  }
-
-  .index-main:before {
-    display: none;
-  }
-}
-
-// Entry page styles //
-
-.entry-body {
-  background-image: url('/images/desktop/moon.svg'),
-    url('/images/desktop/stars-secondary-top.svg'),
-    url('/images/desktop/stars-secondary-bottom.svg'),
-    url('/images/desktop/swoop-secondary-bottom.svg');
-  background-position: 1rem 1rem, top right, bottom left, bottom right;
-  background-repeat: no-repeat;
-}
-
-.entry-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    height: 100px;
-    margin-top: 35vh;
-    color: $light-text;
-    font-size: 4rem;
-  }
-
-  &__name-input {
-    font-size: 3rem;
-    padding: 1rem;
-    margin-top: 1rem;
-    width: 8em;
-    border-radius: 10px;
-    border: 4px solid black;
-  }
-
-  &__button {
-    @extend %button-style;
-    margin-top: 1rem;
-  }
-
-  @include button-hover;
-
-  &__label:before {
-    content: ' ';
-    position: absolute;
-    bottom: 1em;
-    right: 5%;
-    margin: 0 auto;
-    background-image: url('/images/desktop/crystal-ball.svg');
-    background-repeat: no-repeat;
-    height: 22rem;
-    width: 22rem;
-  }
-}
-
-@media only screen and (max-width: 1350px) {
-  .entry-main {
-    &__label:before {
-      bottom: 2em;
-      right: 3rem;
-    }
-
-    &__form {
-      margin-top: 10em;
-    }
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  @include bg-images;
-
-  .entry-main {
-    &__form {
-      font-size: 3rem;
-      margin-top: 8em;
-    }
-
-    &__name-input,
-    &__button {
-      font-size: 2rem;
-    }
-
-    &__label:before {
-      left: 5rem;
-      background-size: 60%;
-    }
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .entry-main {
-    &__label:before {
-      left: 2em;
-      bottom: -1rem;
-      width: 70%;
-    }
-  }
-}
+@import 'results';

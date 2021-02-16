@@ -1,0 +1,98 @@
+// Entry page styles //
+
+.entry-body {
+  @extend %bg-images;
+}
+
+.entry-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    height: 100px;
+    margin-top: 35vh;
+    color: $light-text;
+    font-size: 4rem;
+  }
+
+  &__name-input {
+    font-size: 3rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 8em;
+    border-radius: 10px;
+    border: 4px solid black;
+  }
+
+  &__button {
+    @extend %button-style;
+    margin-top: 1rem;
+  }
+
+  @include button-hover;
+
+  &__label:before {
+    content: ' ';
+    position: absolute;
+    bottom: 1em;
+    right: 5%;
+    margin: 0 auto;
+    background-image: url('/images/desktop/crystal-ball.svg');
+    background-repeat: no-repeat;
+    height: 22rem;
+    width: 22rem;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .entry-main {
+    &__label:before {
+      bottom: 2em;
+      right: 3rem;
+    }
+
+    &__form {
+      margin-top: 10em;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .entry-body {
+    @include bg-images-mobile;
+  }
+
+  .entry-main {
+    &__form {
+      font-size: 3rem;
+      margin-top: 8em;
+    }
+
+    &__name-input,
+    &__button {
+      font-size: 2rem;
+    }
+
+    &__label:before {
+      left: 5rem;
+      background-size: 60%;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .entry-main {
+    &__label:before {
+      left: 2em;
+      bottom: -1rem;
+      width: 70%;
+    }
+  }
+}

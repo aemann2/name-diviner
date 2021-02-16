@@ -42,6 +42,12 @@ body {
   transition: filter 0.3s, -webkit-filter 0.3s;
 }
 
+.entry-body, .results-body {
+  background-image: url("/images/desktop/moon.svg"), url("/images/desktop/stars-secondary-top.svg"), url("/images/desktop/stars-secondary-bottom.svg"), url("/images/desktop/swoop-secondary-bottom.svg");
+  background-position: 1rem 1rem, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+}
+
 ::-webkit-input-placeholder {
   color: #8a8888;
 }
@@ -204,12 +210,6 @@ body {
   }
 }
 
-.entry-body {
-  background-image: url("/images/desktop/moon.svg"), url("/images/desktop/stars-secondary-top.svg"), url("/images/desktop/stars-secondary-bottom.svg"), url("/images/desktop/swoop-secondary-bottom.svg");
-  background-position: 1rem 1rem, top right, bottom left, bottom right;
-  background-repeat: no-repeat;
-}
-
 .entry-main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -309,5 +309,32 @@ body {
     bottom: -1rem;
     width: 70%;
   }
+}
+
+.results-main {
+  width: 450px;
+  background-color: white;
+  width: 40rem;
+  margin: 0 auto;
+  border-radius: 15px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.results-main__main-heading {
+  font-size: 4rem;
+}
+
+.results-main--underline {
+  text-decoration: none;
+  border-bottom: 5px solid black;
+}
+
+.results-main__result-heading {
+  font-size: 2.5rem;
 }
 /*# sourceMappingURL=style.css.map */

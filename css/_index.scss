@@ -1,0 +1,155 @@
+// Index page styles //
+
+.index-body {
+  background-image: url('/images/desktop/swoop-bottom-desktop-main.svg'),
+    linear-gradient(
+      35deg,
+      rgba(105, 100, 163, 0) 50%,
+      rgba(163, 151, 83, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+}
+
+.index-main {
+  color: $light-text;
+  text-align: center;
+
+  &__para {
+    font-size: 3rem;
+    margin-left: 6em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__button {
+    @extend %button-style;
+    position: relative;
+    left: 20%;
+    top: 2rem;
+  }
+
+  @include button-hover;
+
+  &__button:hover > * {
+    color: $highlight-text;
+  }
+
+  &--white-link {
+    text-decoration: none;
+    color: $light-text;
+  }
+}
+
+.title-wrapper {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/desktop/stars-desktop-center.svg');
+  background-repeat: no-repeat;
+  height: 60vh;
+  background-size: 100% 100%;
+
+  &__title {
+    margin-right: 2em;
+    font-size: 12vh;
+    background: -webkit-linear-gradient(90deg, #ffffff -3.07%, #b9ac60 107.31%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &--break {
+    display: table;
+    margin-left: 1em;
+  }
+
+  // adding a slightly different gradient for the second line
+  &--gradient {
+    background: -webkit-linear-gradient(
+      270.03deg,
+      #ffffff 3.67%,
+      #c7b867 108.91%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.index-main:before {
+  content: ' ';
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  background-image: url('/images/desktop/moon.svg');
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  height: 15rem;
+  width: 15rem;
+}
+
+@media only screen and (max-width: 1350px) {
+  html {
+    font-size: 13px;
+  }
+
+  .index-main {
+    &__para,
+    &__button {
+      margin: 0;
+      position: static;
+    }
+
+    &__button {
+      margin-top: 1rem;
+    }
+  }
+
+  .title-wrapper {
+    &__title {
+      font-size: 7rem;
+    }
+  }
+
+  .index-main:before {
+    background-size: 12vw;
+    height: 12vw;
+    width: 12vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: 12px;
+  }
+
+  .index-main {
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+      border-radius: 50%;
+      margin: 5rem auto 0 auto;
+      padding: 4rem;
+      font-size: 2rem;
+    }
+  }
+
+  .title-wrapper {
+    height: 30vh;
+    align-items: flex-start;
+    background-size: contain;
+    background-position: top right;
+
+    &__title {
+      margin: 1.5em 3em 0 0;
+      font-size: 10vw;
+    }
+  }
+
+  .index-main:before {
+    display: none;
+  }
+}
