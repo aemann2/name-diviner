@@ -28,18 +28,24 @@
 <script>
   const nationalityText = document.querySelector('#nationality');
   const ageText = document.querySelector('#age');
+  const nameOriginText = document.querySelector('#name-origin');
 
   let country = localStorage.getItem('country');
   let age = localStorage.getItem('age');
+  let origin = localStorage.getItem('origin');
 
   country = JSON.parse(country).country[0].country_id;
   age = JSON.parse(age);
+  origin = JSON.parse(origin);
 
-  nationalityText.innerHTML = `Do you live in ${country}?`;
-  ageText.innerHTML = `Are you ${age.age} years old?`;
+  nationalityText.innerHTML = `The Oracle believes you live in ${country}.`;
+  ageText.innerHTML = `The Oracle believes you are ${age.age} years old.`;
+  nameOriginText.innerHTML = `The Oracle believes your last name is ${origin.origin}.`;
+
 
   console.log(country);
   console.log(age.age);
+  console.log(origin.origin);
 
 </script>
 
