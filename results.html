@@ -13,20 +13,34 @@
   <title>Name Diviner | Results</title>
 </head>
 
-<body>
-
-  <body class="results-body">
-    <main class="results-main">
-      <h2 class="results-main__main-heading"><u class="results-main--underline">Results</span></u>
-      </h2>
-      <h3 class="results-main__result-heading">Nationality</span></h3>
-      <p class="results-main__result-text"></p>
-      <h3 class="results-main__result-heading">Age</h3>
-      <p class="results-main__result-text"></p>
-      <h3 class="results-main__result-heading">Last Name Origin</h3>
-      <p class="results-main__result-text"></p>
-    </main>
-  </body>
+<body class="results-body">
+  <main class="results-main">
+    <h2 class="results-main__main-heading"><u class="results-main--underline">Results</u>
+    </h2>
+    <h3 class="results-main__result-heading">Nationality</h3>
+    <p class="results-main__result-text" id="nationality"></p>
+    <h3 class="results-main__result-heading">Age</h3>
+    <p class="results-main__result-text" id="age"></p>
+    <h3 class="results-main__result-heading">Last Name Origin</h3>
+    <p class="results-main__result-text" id="name-origin"></p>
+  </main>
 </body>
+<script>
+  const nationalityText = document.querySelector('#nationality');
+  const ageText = document.querySelector('#age');
+
+  let country = localStorage.getItem('country');
+  let age = localStorage.getItem('age');
+
+  country = JSON.parse(country).country[0].country_id;
+  age = JSON.parse(age);
+
+  nationalityText.innerHTML = `Do you live in ${country}?`;
+  ageText.innerHTML = `Are you ${age.age} years old?`;
+
+  console.log(country);
+  console.log(age.age);
+
+</script>
 
 </html>
