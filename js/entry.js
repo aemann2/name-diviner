@@ -1,18 +1,20 @@
+// grabbing the form element and adding an event listener
 const nameForm = document.querySelector('#name-form');
-
 nameForm.addEventListener('submit', submitSearch);
 
+// assigning a storage variable
 const storage = window.localStorage;
 
+// making a function that newPage will wait on so that the data returns before the results page is rendered
 async function submitSearch(e) {
   e.preventDefault();
 
+  // breaking up first and last name
   const fullName = this.name.value.split(' ');
   const firstName = fullName[0];
   const lastName = fullName[fullName.length - 1];
 
   // Axios requests to both APIs using .all
-
   await axios
     .all([
       await axios.get(`https://api.nationalize.io?name=${firstName}`),
@@ -35,7 +37,6 @@ async function submitSearch(e) {
     });
 
   // Fetch request using a CORS proxy
-
   var myHeaders = new Headers();
   myHeaders.append(
     'x-rapidapi-key',
@@ -61,5 +62,6 @@ async function submitSearch(e) {
 
 async function newPage() {
   await submitSearch;
+  // routes to /results after API calls return
   window.location.href = '/results.html';
 }
