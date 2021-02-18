@@ -338,7 +338,12 @@ body {
 .results-main__result-heading {
   font-size: 3rem;
   font-weight: 900;
-  margin-top: 2em;
+  margin-top: 1em;
+}
+
+.results-main__result-text {
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 .results-main p:last-child {
