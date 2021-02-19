@@ -62,6 +62,8 @@ async function submitSearch(e) {
 
 async function newPage() {
   await submitSearch;
-  // routes to /results after API calls return
-  window.location.href = '/results.html';
+  // routes to results.html after API calls return
+  const nextPage = new URL('results.html', window.location.href);
+  console.log(window.location.href);
+  window.location.href = nextPage;
 }
