@@ -273,6 +273,19 @@ body {
   width: 22rem;
 }
 
+.loader {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media only screen and (max-width: 1350px) {
   .entry-main__label:before {
     bottom: 2em;
