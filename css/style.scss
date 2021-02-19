@@ -19,8 +19,8 @@ $main-font: 'Lato', sans-serif;
 }
 
 @mixin bg-images-mobile {
-  background-image: url('/images/desktop/stars-secondary-top.svg'),
-    url('/images/desktop/stars-secondary-bottom.svg');
+  background-image: url('../images/stars-secondary-top.svg'),
+    url('../images/stars-secondary-bottom.svg');
   background-position: top right, bottom left;
   background-size: 80%;
   background-repeat: no-repeat;
@@ -66,10 +66,10 @@ body {
 }
 
 %bg-images {
-  background-image: url('/images/desktop/moon.svg'),
-    url('/images/desktop/stars-secondary-top.svg'),
-    url('/images/desktop/stars-secondary-bottom.svg'),
-    url('/images/desktop/swoop-secondary-bottom.svg');
+  background-image: url('../images/moon.svg'),
+    url('../images/stars-secondary-top.svg'),
+    url('../images/stars-secondary-bottom.svg'),
+    url('../images/swoop-secondary-bottom.svg');
   background-position: 1rem 1rem, top right, bottom left, bottom right;
   background-repeat: no-repeat;
 }

@@ -43,7 +43,7 @@ body {
 }
 
 .entry-body, .results-body {
-  background-image: url("/images/desktop/moon.svg"), url("/images/desktop/stars-secondary-top.svg"), url("/images/desktop/stars-secondary-bottom.svg"), url("/images/desktop/swoop-secondary-bottom.svg");
+  background-image: url("../images/moon.svg"), url("../images/stars-secondary-top.svg"), url("../images/stars-secondary-bottom.svg"), url("../images/swoop-secondary-bottom.svg");
   background-position: 1rem 1rem, top right, bottom left, bottom right;
   background-repeat: no-repeat;
 }
@@ -65,7 +65,7 @@ body {
 }
 
 .index-body {
-  background-image: url("/images/desktop/swoop-bottom-desktop-main.svg"), linear-gradient(35deg, rgba(105, 100, 163, 0) 50%, #a39753 100%);
+  background-image: url("../images/swoop-bottom-desktop-main.svg"), linear-gradient(35deg, rgba(105, 100, 163, 0) 50%, #a39753 100%);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100%;
@@ -114,7 +114,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("/images/desktop/stars-desktop-center.svg");
+  background-image: url("../images/stars-desktop-center.svg");
   background-repeat: no-repeat;
   height: 60vh;
   background-size: 100% 100%;
@@ -146,7 +146,7 @@ body {
   position: absolute;
   left: 2rem;
   top: 2rem;
-  background-image: url("/images/desktop/moon.svg");
+  background-image: url("../images/moon.svg");
   background-size: 15rem;
   background-repeat: no-repeat;
   height: 15rem;
@@ -267,7 +267,7 @@ body {
   bottom: 1em;
   right: 5%;
   margin: 0 auto;
-  background-image: url("/images/desktop/crystal-ball.svg");
+  background-image: url("../images/crystal-ball.svg");
   background-repeat: no-repeat;
   height: 22rem;
   width: 22rem;
@@ -285,7 +285,7 @@ body {
 
 @media only screen and (max-width: 650px) {
   .entry-body {
-    background-image: url("/images/desktop/stars-secondary-top.svg"), url("/images/desktop/stars-secondary-bottom.svg");
+    background-image: url("../images/stars-secondary-top.svg"), url("../images/stars-secondary-bottom.svg");
     background-position: top right, bottom left;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -352,7 +352,7 @@ body {
 
 @media only screen and (max-width: 650px) {
   .results-body {
-    background-image: url("/images/desktop/stars-secondary-top.svg"), url("/images/desktop/stars-secondary-bottom.svg");
+    background-image: url("../images/stars-secondary-top.svg"), url("../images/stars-secondary-bottom.svg");
     background-position: top right, bottom left;
     background-size: 80%;
     background-repeat: no-repeat;

@@ -1,7 +1,7 @@
 // Index page styles //
 
 .index-body {
-  background-image: url('/images/desktop/swoop-bottom-desktop-main.svg'),
+  background-image: url('../images/swoop-bottom-desktop-main.svg'),
     linear-gradient(
       35deg,
       rgba(105, 100, 163, 0) 50%,
@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/desktop/stars-desktop-center.svg');
+  background-image: url('../images/stars-desktop-center.svg');
   background-repeat: no-repeat;
   height: 60vh;
   background-size: 100% 100%;
@@ -83,7 +83,7 @@
   position: absolute;
   left: 2rem;
   top: 2rem;
-  background-image: url('/images/desktop/moon.svg');
+  background-image: url('../images/moon.svg');
   background-size: 15rem;
   background-repeat: no-repeat;
   height: 15rem;
