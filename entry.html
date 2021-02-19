@@ -18,7 +18,7 @@
     <form class="entry-main__form" id="name-form" action="">
       <label class="entry-main__label" for="name">Enter Your Name:</label>
       <input class="entry-main__name-input" type="text" id="name" name="name" placeholder="Jane Doe"
-        pattern="[A-Za-z\-]+\s[A-Za-z\-]+" oninvalid="this.setCustomValidity('Please enter a first and last name')"
+        pattern="[A-Za-z\-']+\s[A-Za-z\-']+" oninvalid="this.setCustomValidity('Please enter a first and last name')"
         oninput="setCustomValidity('')" required>
       <input class="entry-main__button" type="submit" value=Submit>
     </form>
