@@ -1,3 +1,5 @@
+import { controller, fetchTimeout, spinner } from './helpers.js';
+
 // grabbing the form element and adding an event listener
 const nameForm = document.querySelector('#name-form');
 nameForm.addEventListener('submit', submitSearch);
@@ -8,16 +10,6 @@ const storage = window.localStorage;
 // grabbing body and main classes of entry page
 const pageBody = document.querySelector('.entry-body');
 const pageMain = document.querySelector('.entry-main');
-
-// a function that creates a loading spinner
-const spinner = () => {
-  const loader = document.createElement('div');
-  loader.className = 'loader';
-  const image = document.createElement('img');
-  image.setAttribute('src', './images/spinner.svg');
-  loader.appendChild(image);
-  return loader;
-};
 
 // making a function that newPage will wait on so that the data returns before the results page is rendered
 async function submitSearch(e) {
@@ -65,28 +57,11 @@ async function submitSearch(e) {
     redirect: 'follow',
   };
 
-  // const controller = new AbortController();
-
-  // const fetchTimeout = (url, ms, { signal, ...options } = {}) => {
-  //   const controller = new AbortController();
-  //   const promise = fetch(url, { signal: controller.signal, ...options });
-  //   if (signal) signal.addEventListener('abort', () => controller.abort());
-  //   const timeout = setTimeout(() => controller.abort(), ms);
-  //   return promise.finally(() => clearTimeout(timeout));
-  // };
-
-  // fetchTimeout(
-  //   `https://quiet-tundra-15224.herokuapp.com/https://binaryfog-last-name-origin-v1.p.rapidapi.com/api/LastName/origin?lastName=${lastName}`,
-  //   7000,
-  //   { signal: controller.signal, requestOptions }
-  // )
-  //   .then((response) => response.text())
-  //   .then((result) => storage.setItem('origin', result))
-  //   .catch((error) => console.log('error', error));
-
-  await fetch(
+  await fetchTimeout(
     `https://quiet-tundra-15224.herokuapp.com/https://binaryfog-last-name-origin-v1.p.rapidapi.com/api/LastName/origin?lastName=${lastName}`,
-    requestOptions
+    10000,
+    requestOptions,
+    { signal: controller.signal }
   )
     .then((response) => response.text())
     .then((result) => storage.setItem('origin', result))

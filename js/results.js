@@ -6,12 +6,12 @@ const nationalityText = document.querySelector('#nationality');
 const ageText = document.querySelector('#age');
 const nameOriginText = document.querySelector('#name-origin');
 
-// assigning variables to values from localStorage (which are set in entry.js)
+// assigning variables to values from localStorage (which are set in entry.js). if the
 let {
   country: [country],
-} = JSON.parse(localStorage.getItem('country'));
-const { age } = JSON.parse(localStorage.getItem('age'));
-const { origin } = JSON.parse(localStorage.getItem('origin'));
+} = JSON.parse(localStorage.getItem('country')) || {};
+const { age } = JSON.parse(localStorage.getItem('age')) || {};
+const { origin } = JSON.parse(localStorage.getItem('origin')) || {};
 
 // putting data into the DOM...error handling in case the API returns nothing
 nationalityText.innerHTML = country
