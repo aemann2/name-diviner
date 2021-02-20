@@ -3,7 +3,7 @@ const spinner = () => {
   const loader = document.createElement('div');
   loader.className = 'loader';
   const image = document.createElement('img');
-  image.setAttribute('src', '../images/spinner.svg');
+  image.setAttribute('src', '/images/spinner.svg');
   loader.appendChild(image);
   return loader;
 };
