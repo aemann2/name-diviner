@@ -57,6 +57,7 @@ async function submitSearch(e) {
     redirect: 'follow',
   };
 
+  // fetch request with a timeout
   await fetchTimeout(
     `https://quiet-tundra-15224.herokuapp.com/https://binaryfog-last-name-origin-v1.p.rapidapi.com/api/LastName/origin?lastName=${lastName}`,
     10000,

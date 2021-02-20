@@ -6,7 +6,7 @@ const nationalityText = document.querySelector('#nationality');
 const ageText = document.querySelector('#age');
 const nameOriginText = document.querySelector('#name-origin');
 
-// assigning variables to values from localStorage (which are set in entry.js). if the
+// assigning variables to values from localStorage (which are set in entry.js). if any values can't be destructured, they're set to null
 let {
   country: [country],
 } = JSON.parse(localStorage.getItem('country')) || {};
