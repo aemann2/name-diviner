@@ -13,7 +13,9 @@ const pageMain = document.querySelector('.entry-main');
 
 // making a function that newPage will wait on so that the data returns before the results page is rendered
 async function submitSearch(e) {
+  // prevents the form from submitting and reloading the page and clears any values present in local storage
   e.preventDefault();
+  storage.clear();
   // calling the loading spinner
   pageBody.replaceChild(spinner(), pageMain);
 
