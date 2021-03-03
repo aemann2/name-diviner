@@ -127,6 +127,7 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px #00000000;
 }
 
 .title-wrapper--break {
@@ -325,7 +326,6 @@ body {
 }
 
 .results-main {
-  width: 450px;
   background-color: white;
   width: 40rem;
   margin: 0 auto;
@@ -373,6 +373,13 @@ body {
   .results-main {
     width: 90vw;
     min-height: 80vh;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .results-main__main-heading {
+    font-size: 4rem;
+    margin-top: 2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
