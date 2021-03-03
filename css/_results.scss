@@ -5,7 +5,6 @@
 }
 
 .results-main {
-  width: 450px;
   background-color: white;
   width: 40rem;
   margin: 0 auto;
@@ -50,5 +49,14 @@
   .results-main {
     width: 90vw;
     min-height: 80vh;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .results-main {
+    &__main-heading {
+      font-size: 4rem;
+      margin-top: 2rem;
+    }
   }
 }
