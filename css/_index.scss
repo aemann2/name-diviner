@@ -23,6 +23,7 @@
   }
 
   &__button {
+    display: inline-block;
     @extend %button-style;
     position: relative;
     left: 20%;
