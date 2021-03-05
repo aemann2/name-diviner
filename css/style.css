@@ -83,6 +83,7 @@ body {
 }
 
 .index-main__button {
+  display: inline-block;
   position: relative;
   left: 20%;
   top: 2rem;
