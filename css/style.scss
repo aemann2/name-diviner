@@ -30,7 +30,6 @@ $main-font: 'Lato', sans-serif;
 
 html {
   box-sizing: border-box;
-  height: 100%;
   font-size: 16px;
 }
 *,
@@ -49,6 +48,7 @@ h1 {
 }
 
 body {
+  min-height: 100vh;
   background-color: $bg-color;
   font-family: $main-font;
 }
