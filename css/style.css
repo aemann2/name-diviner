@@ -26,7 +26,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.index-main__button, .entry-main__button {
+.index-main__button, .entry-main__button, .results-main__button {
   padding: 20px;
   border: 0;
   color: #faf7eb;
@@ -352,7 +352,7 @@ body {
 
 .results-main__main-heading {
   font-size: 5rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .results-main--underline {
@@ -371,6 +371,12 @@ body {
   margin-top: 1rem;
 }
 
+.results-main__button {
+  font-size: 2rem;
+  margin: 2rem 0;
+  display: inline-block;
+}
+
 .results-main p:last-child {
   margin-bottom: 5rem;
 }
@@ -383,15 +389,26 @@ body {
     background-repeat: no-repeat;
   }
   .results-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 90vw;
-    min-height: 80vh;
   }
 }
 
 @media only screen and (max-height: 600px) {
-  .results-main__main-heading {
-    font-size: 4rem;
-    margin-top: 2rem;
+  .results-main__result-heading {
+    font-size: 2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
