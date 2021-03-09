@@ -17,7 +17,7 @@
 
   &__main-heading {
     font-size: 5rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 
   &--underline {
@@ -36,6 +36,13 @@
     margin-top: 1rem;
   }
 
+  &__button {
+    @extend %button-style;
+    font-size: 2rem;
+    margin: 2rem 0;
+    display: inline-block;
+  }
+
   & p:last-child {
     margin-bottom: 5rem;
   }
@@ -47,16 +54,18 @@
   }
 
   .results-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90vw;
-    min-height: 80vh;
   }
 }
 
 @media only screen and (max-height: 600px) {
   .results-main {
-    &__main-heading {
-      font-size: 4rem;
-      margin-top: 2rem;
+    &__result-heading {
+      font-size: 2rem;
     }
   }
 }
