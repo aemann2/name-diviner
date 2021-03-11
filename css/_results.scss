@@ -43,6 +43,8 @@
     display: inline-block;
   }
 
+  @include button-hover;
+
   & p:last-child {
     margin-bottom: 5rem;
   }

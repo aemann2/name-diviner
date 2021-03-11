@@ -17,6 +17,7 @@
     align-items: center;
     color: $light-text;
     font-size: 4rem;
+    margin-top: 4em;
   }
 
   &__name-input {
@@ -38,7 +39,7 @@
   &__label:before {
     content: ' ';
     position: absolute;
-    bottom: 4em;
+    top: -6rem;
     right: 5%;
     margin: 0 auto;
     background-image: url('../images/crystal-ball.svg');
@@ -68,7 +69,7 @@
   .entry-main {
     &__label:before {
       left: 9rem;
-      bottom: 11rem;
+      top: 1rem;
       background-size: 12rem;
     }
   }
@@ -95,7 +96,7 @@
 
     &__label:before {
       left: 5rem;
-      bottom: 10rem;
+      top: -4rem;
       background-size: 60%;
     }
   }
@@ -105,7 +106,7 @@
   .entry-main {
     &__label:before {
       left: 7rem;
-      bottom: 6rem;
+      top: 0rem;
       width: 70%;
     }
   }
