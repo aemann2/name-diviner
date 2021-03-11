@@ -176,6 +176,18 @@ body {
   }
 }
 
+@media only screen and (max-height: 750px) {
+  .index-body {
+    height: 700px;
+  }
+  .title-wrapper {
+    height: 450px;
+  }
+  .title-wrapper__title {
+    font-size: 6rem;
+  }
+}
+
 @media only screen and (max-width: 650px) {
   html {
     font-size: 12px;
