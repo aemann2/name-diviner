@@ -192,6 +192,9 @@ body {
   html {
     font-size: 12px;
   }
+  .index-body {
+    height: 0;
+  }
   .index-main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -201,23 +204,30 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .index-main__para {
+    font-size: 2rem;
+  }
   .index-main__button {
     border-radius: 50%;
-    margin: 5rem auto 0 auto;
-    padding: 4rem;
+    margin: 3rem auto 0 auto;
+    padding: 2rem;
     font-size: 2rem;
   }
   .title-wrapper {
+    position: relative;
     height: 30vh;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
     background-size: contain;
-    background-position: top right;
+    background-position: center;
+    margin-bottom: 5rem;
   }
   .title-wrapper__title {
-    margin: 1.5em 3em 0 0;
-    font-size: 10vw;
+    position: absolute;
+    top: 2rem;
+    margin: 1rem 0 0 0;
+    font-size: 13vw;
   }
   .index-main:before {
     display: none;
