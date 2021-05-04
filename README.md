@@ -1,5 +1,7 @@
 # [Name Diviner](https://name-diviner.netlify.app/)
 
+<a href="https://name-diviner.netlify.app/" target="_blank"><img src='https://user-images.githubusercontent.com/68879246/117073516-e044e880-ace6-11eb-889b-55c4143b0c50.png' alt='Name Diviner'></a>
+
 **Name Diviner** is an app that uses 3rd party API data to make predictions about a person based on their name. Two of the APIs -- [agify.io](https://agify.io) and [nationalize.io](https://nationalize.io) -- return name- and country-predictive data (respectively) based on the first name. A third API called [Last Name Origin](https://rapidapi.com/binaryfog/api/last-name-origin/) determines the country of origin of a last name.
 
 Note: the **Last Name Origin** API is very slow. The app is configured to time out the request after **10** seconds, but sometimes the API takes even longer to respond. It does seems to speed up after a few searches.
